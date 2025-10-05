@@ -103,14 +103,16 @@ export default function Navbar() {
                   </motion.span>
                 </Link>
               ))}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-md font-medium tracking-wide transition-all duration-200 shadow-lg shadow-amber-500/20 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black"
-                aria-label="Réserver un service"
-              >
-                Réserver
-              </motion.button>
+              <Link href="#contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-md font-medium tracking-wide transition-all duration-200 shadow-lg shadow-amber-500/20 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black"
+                  aria-label="Réserver un service"
+                >
+                  Réserver
+                </motion.button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -181,16 +183,18 @@ export default function Navbar() {
                   </div>
                 </nav>
 
-                <motion.button
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  onClick={closeMobileMenu}
-                  className="mt-8 bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded-md font-medium tracking-wide transition-all duration-200 shadow-lg shadow-amber-500/20 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black"
-                  aria-label="Réserver un service"
-                >
-                  Réserver
-                </motion.button>
+                <Link href="#contact">
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    onClick={closeMobileMenu}
+                    className="mt-8 bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded-md font-medium tracking-wide transition-all duration-200 shadow-lg shadow-amber-500/20 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black"
+                    aria-label="Réserver un service"
+                  >
+                    Réserver
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           </>

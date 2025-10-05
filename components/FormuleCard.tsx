@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Check, Star } from 'lucide-react';
+import Link from 'next/link';
 
 interface FormuleCardProps {
   title: string;
@@ -118,17 +119,19 @@ export default function FormuleCard({
           </div>
 
           {/* CTA Button */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className={`w-full py-4 rounded-lg font-medium tracking-wide transition-all duration-200 ${
-              featured
-                ? 'bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white shadow-lg shadow-amber-500/30'
-                : 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 hover:border-amber-500/50'
-            }`}
-          >
-            {ctaText}
-          </motion.button>
+          <Link href="#contact">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`w-full py-4 rounded-lg font-medium tracking-wide transition-all duration-200 ${
+                featured
+                  ? 'bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white shadow-lg shadow-amber-500/30'
+                  : 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 hover:border-amber-500/50'
+              }`}
+            >
+              {ctaText}
+            </motion.button>
+          </Link>
         </div>
 
         {/* Decorative corner elements */}

@@ -14,6 +14,7 @@ import {
   Heart,
   Zap
 } from 'lucide-react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ServiceSection from '@/components/ServiceSection';
@@ -119,13 +120,15 @@ export default function Home() {
             <p className="text-gray-400 mb-6">
               Vous ne trouvez pas ce que vous cherchez ?
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white px-8 py-3 rounded-lg font-medium tracking-wide transition-all duration-200 shadow-lg shadow-amber-500/30"
-            >
-              Demander un service personnalisé
-            </motion.button>
+            <Link href="#contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white px-8 py-3 rounded-lg font-medium tracking-wide transition-all duration-200 shadow-lg shadow-amber-500/30"
+              >
+                Demander un service personnalisé
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>
