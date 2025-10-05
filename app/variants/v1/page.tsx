@@ -9,10 +9,10 @@ import {
   CheckCircle2,
   Package,
   Shirt,
+  Eye,
   Car,
   Calendar,
-  Headphones,
-  Building2
+  Headphones
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -24,8 +24,8 @@ import Footer from '@/components/Footer';
 
 const prestations = [
   { icon: Package, title: 'Livraison & courses', description: 'Livraison express de vos achats et courses quotidiennes' },
-  { icon: Shirt, title: 'Pressing & repassage', description: 'Service pressing professionnel et retouches' },
-  { icon: Building2, title: 'Services immobiliers', description: 'États des lieux, surveillance et gardiennage de votre domicile' },
+  { icon: Shirt, title: 'Pressing & repassage', description: 'Service pressing haut de gamme et retouches' },
+  { icon: Eye, title: 'Surveillance domicile', description: 'Surveillance et gardiennage de votre domicile' },
   { icon: Car, title: 'Transport & chauffeur', description: 'Service de transport privé avec chauffeur' },
   { icon: Calendar, title: 'Réservations', description: 'Restaurants, spectacles, voyages et événements' },
   { icon: Headphones, title: 'Assistance 24/7', description: 'Support et assistance disponible à tout moment' },
@@ -65,6 +65,11 @@ const values = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-black">
+      {/* Variant Number Badge */}
+      <div className="fixed top-4 right-4 z-50 bg-amber-500 text-black font-bold text-lg px-4 py-2 rounded-full shadow-lg">
+        V1
+      </div>
+
       <Navbar />
 
       {/* Hero Section with Promo */}
@@ -131,26 +136,6 @@ export default function Home() {
               );
             })}
           </div>
-
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-16"
-          >
-            <p className="text-gray-400 mb-6">
-              Vous ne trouvez pas ce que vous cherchez ?
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white px-8 py-3 rounded-lg font-medium tracking-wide transition-all duration-200 shadow-lg shadow-amber-500/30"
-            >
-              Demander un service personnalisé
-            </motion.button>
-          </motion.div>
         </div>
       </section>
 

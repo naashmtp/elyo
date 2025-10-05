@@ -1,0 +1,8 @@
+/* Variante 3: Crimson Text - UPPERCASE - Espacement moyen - Style éditorial */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-crimson), Georgia, serif !important;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}

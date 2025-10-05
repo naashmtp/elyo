@@ -1,26 +1,218 @@
-@import "tailwindcss";
+/**
+ * ELYÔ Conciergerie - Luxury Design System
+ *
+ * Usage Examples:
+ * - Colors: bg-anthracite, text-gold, border-navy
+ * - Fonts: font-heading, font-body, font-accent
+ * - Shadows: shadow-card, shadow-gold-glow, shadow-elevated
+ * - Animations: animate-fade-in-up, animate-shimmer
+ * - Utilities: luxury-card, shimmer-bg, gold-gradient, gold-divider
+ *
+ * All custom properties are available via CSS variables (--color-gold, --shadow-card, etc.)
+ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+
+/* ELYÔ Luxury Design System */
+@theme {
+  /* ========== CUSTOM COLORS ========== */
+  /* Primary Colors */
+  --color-anthracite: #2C2C2E;
+  --color-gold: #C9A961;
+  --color-navy: #1B2B3A;
+  --color-gold-light: #E4D4A8;
+  --color-gold-dark: #A57A3C;
+  --color-pearl: #FAFAF8;
+  --color-silver: #D4D4D4;
+  --color-slate: #6B6B6B;
+  --color-charcoal: #3A3A3C;
+  --color-midnight: #111111;
+
+  /* Semantic Colors */
+  --color-background: var(--color-anthracite);
+  --color-foreground: var(--color-pearl);
+  --color-primary: var(--color-gold);
+  --color-primary-light: var(--color-gold-light);
+  --color-primary-dark: var(--color-gold-dark);
+  --color-secondary: var(--color-navy);
+  --color-accent: var(--color-gold);
+  --color-muted: var(--color-slate);
+  --color-border: var(--color-charcoal);
+  --color-card: var(--color-navy);
+
+  /* ========== CUSTOM FONTS ========== */
+  /* Note: Fonts are loaded via Next.js font optimization in layout.tsx */
+  /* Font families are set on the body element via className */
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-accent: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: var(--font-body);
+
+  /* ========== LUXURY SPACING SCALE ========== */
+  /* Generous spacing for luxury feel */
+  --spacing-xs: 0.5rem;     /* 8px */
+  --spacing-sm: 0.75rem;    /* 12px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  --spacing-4xl: 6rem;      /* 96px */
+  --spacing-5xl: 8rem;      /* 128px */
+  --spacing-6xl: 12rem;     /* 192px */
+
+  /* ========== CUSTOM ANIMATIONS ========== */
+  /* fadeInUp Animation */
+  --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-slide-in: slide-in 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-glow: glow 2s ease-in-out infinite;
+
+  /* ========== LUXURY BOX SHADOWS ========== */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-gold-glow: 0 0 20px rgba(201, 169, 97, 0.3);
+  --shadow-gold-glow-lg: 0 0 40px rgba(201, 169, 97, 0.4);
+  --shadow-inner-subtle: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* ========== BORDER RADIUS SYSTEM ========== */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+
+  /* ========== LUXURY TIMING FUNCTIONS ========== */
+  --ease-luxury: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-elegant: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ========== KEYFRAME ANIMATIONS ========== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(201, 169, 97, 0.6);
+  }
+}
+
+/* ========== UTILITY CLASSES ========== */
+.shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 169, 97, 0.3),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #E4D4A8 0%, #C9A961 50%, #A57A3C 100%);
+}
+
+.luxury-card {
+  background: var(--color-navy);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(201, 169, 97, 0.1);
+  transition: all 0.3s var(--ease-luxury);
+}
+
+.luxury-card:hover {
+  box-shadow: var(--shadow-gold-glow-lg);
+  border-color: rgba(201, 169, 97, 0.3);
+  transform: translateY(-2px);
+}
+
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* ========== DARK MODE SUPPORT ========== */
+@media (prefers-color-scheme: light) {
+  @theme {
+    --color-background: var(--color-pearl);
+    --color-foreground: var(--color-anthracite);
+    --color-card: #ffffff;
+    --color-border: var(--color-silver);
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.dark {
+  --color-background: var(--color-anthracite);
+  --color-foreground: var(--color-pearl);
+  --color-card: var(--color-navy);
+  --color-border: var(--color-charcoal);
+}
+
+/* ========== BASE STYLES ========== */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-crimson), Georgia, serif !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ========== SMOOTH SCROLLING ========== */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

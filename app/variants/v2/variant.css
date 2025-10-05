@@ -1,0 +1,8 @@
+/* Variante 2: Lora - Capitalize - Espacement subtil - Style raffiné */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-lora), Georgia, serif !important;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  text-transform: capitalize;
+}

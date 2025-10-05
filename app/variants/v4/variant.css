@@ -1,0 +1,8 @@
+/* Variante 4: EB Garamond - Capitalize - Espacement minimal - Style classique */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-eb-garamond), Georgia, serif !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  text-transform: capitalize;
+}

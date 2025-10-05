@@ -1,0 +1,12 @@
+export { default as Navbar } from './Navbar';
+export { default as Hero } from './Hero';
+export { default as ServiceCard } from './ServiceCard';
+export { default as ServiceSection } from './ServiceSection';
+export { default as FormuleCard } from './FormuleCard';
+export { default as FormuleSection } from './FormuleSection';
+export { default as ContactForm } from './ContactForm';
+export { default as ContactSection } from './ContactSection';
+export { default as Footer } from './Footer';
+export { default as PrestationsSection } from './PrestationsSection';
+export { default as StatsSection } from './StatsSection';
+export { default as ValuesSection } from './ValuesSection';
