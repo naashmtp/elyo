@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/demo/page": "app/demo/page.js",
+  "/equipe/page": "app/equipe/page.js",
+  "/page": "app/page.js",
+  "/variants/page": "app/variants/page.js",
+  "/variants/v1/page": "app/variants/v1/page.js",
+  "/variants/v2/page": "app/variants/v2/page.js",
+  "/variants/v3/page": "app/variants/v3/page.js",
+  "/variants/v4/page": "app/variants/v4/page.js"
+}
