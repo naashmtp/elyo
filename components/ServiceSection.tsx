@@ -106,6 +106,19 @@ export default function ServiceSection() {
           ))}
         </div>
 
+        {/* Additional Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-gray-300 text-lg leading-relaxed mx-auto" style={{ maxWidth: '48rem' }}>
+            Nous travaillons avec les meilleurs prestataires de services pour vous offrir les meilleures options en termes de qualité, de prix et d&apos;expérience. Nous sommes là pour vous aider à trouver les meilleures solutions en fonction de vos préférences et de vos besoins.
+          </p>
+        </motion.div>
+
       </div>
     </section>
   );
