@@ -78,7 +78,7 @@ export default function FormuleSection() {
             </h2>
             <p className="text-gray-400 text-lg mx-auto" style={{ maxWidth: '42rem' }}>
               Des formules adaptées à tous vos besoins, du service ponctuel à
-              l&apos;accompagnement complet sans limite.
+              l&apos;accompagnement complet sans limite. Services à partir de 8€.
             </p>
           </motion.div>
         </div>
