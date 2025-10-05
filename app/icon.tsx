@@ -4,8 +4,8 @@ import { join } from 'path'
 
 export const runtime = 'nodejs'
 export const size = {
-  width: 32,
-  height: 32,
+  width: 256,
+  height: 256,
 }
 export const contentType = 'image/png'
 
@@ -24,13 +24,15 @@ export default async function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          padding: '32px',
         }}
       >
         <img
           src={`data:image/png;base64,${logoBase64}`}
-          width="28"
-          height="28"
+          width="192"
+          height="192"
           style={{ objectFit: 'contain' }}
+          alt=""
         />
       </div>
     ),
