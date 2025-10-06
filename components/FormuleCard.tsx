@@ -31,7 +31,7 @@ export default function FormuleCard({
     const formuleMapping: { [key: string]: string } = {
       'Essentiel': 'Formule Essentielle',
       'Confort': 'Formule Premium',
-      'Illimité': 'Formule Premium'
+      'Illimité': 'Formule Illimitée'
     };
     const serviceType = formuleMapping[title] || `Formule ${title}`;
     sessionStorage.setItem('selectedFormule', serviceType);

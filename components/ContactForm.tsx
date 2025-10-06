@@ -23,6 +23,7 @@ interface FormErrors {
 const serviceTypes = [
   'Formule Essentielle',
   'Formule Premium',
+  'Formule Illimitée',
   'Organisation d\'événements',
   'Services à domicile',
   'Shopping & Personal Shopper',
