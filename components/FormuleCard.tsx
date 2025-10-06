@@ -10,6 +10,7 @@ interface FormuleCardProps {
   price: string;
   period?: string;
   features: string[];
+  note?: string;
   featured?: boolean;
   delay?: number;
   ctaText?: string;
@@ -21,6 +22,7 @@ export default function FormuleCard({
   price,
   period = '/mois',
   features,
+  note,
   featured = false,
   delay = 0,
   ctaText = 'Choisir cette formule',
@@ -117,6 +119,14 @@ export default function FormuleCard({
               ))}
             </ul>
           </div>
+
+          {/* Important Note */}
+          {note && (
+            <div className="mb-6 p-4 bg-gray-800/50 border border-gray-700/50 rounded-lg">
+              <p className="text-xs font-semibold text-amber-400 mb-2">Important :</p>
+              <p className="text-xs text-gray-400 leading-relaxed">{note}</p>
+            </div>
+          )}
 
           {/* CTA Button */}
           <Link href="#contact">

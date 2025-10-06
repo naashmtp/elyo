@@ -10,12 +10,14 @@ const formules = [
     price: 'dès 49€',
     period: '/mois',
     features: [
-      'Accès à 3 services par mois',
+      'Accès à 3 services "essentiels" par mois',
+      'Services rapides : réservation, conseils, mises en relation',
       'Réponse sous 24h',
       'Assistance par email',
       '1 service de réservation offert par mois',
       'Au choix dans un panel sélectionné',
     ],
+    note: 'Les services nécessitant un déplacement, une intervention prolongée ou spécifiques (organisation d\'événements, services premium) sont exclus de cette formule et feront l\'objet d\'un devis personnalisé avec supplément à partir de 15€ par prestation.',
     featured: false,
   },
   {
@@ -24,14 +26,15 @@ const formules = [
     price: 'dès 79€',
     period: '/mois',
     features: [
-      'Accès à 5 services par mois',
+      'Accès à 5 services personnalisés par mois',
+      'Assistant dédié, prioritaire',
       'Réponse sous 4h',
-      'Assistant dédié',
+      'Accès à toute la gamme',
       '1 service de réservation offert par mois',
-      'Au choix dans toute la gamme',
       'Priorité sur les réservations',
       'Accès aux événements',
     ],
+    note: 'Les demandes nécessitant un déplacement, une intervention prolongée ou une prestation premium feront l\'objet d\'un complément à partir de 10€ selon la nature de la prestation. Un devis préalable est systématiquement proposé avant toute intervention hors forfait.',
     featured: true,
   },
   {
@@ -93,6 +96,7 @@ export default function FormuleSection() {
               price={formule.price}
               period={formule.period}
               features={formule.features}
+              note={formule.note}
               featured={formule.featured}
               delay={index * 0.1}
               ctaText={formule.ctaText}
