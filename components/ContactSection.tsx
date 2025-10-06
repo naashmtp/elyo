@@ -8,8 +8,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'elyoconciergerie@outlook.fr',
-    href: 'mailto:elyoconciergerie@outlook.fr',
+    content: 'services.elyo@gmail.com',
+    href: 'mailto:services.elyo@gmail.com',
   },
   {
     icon: Phone,
