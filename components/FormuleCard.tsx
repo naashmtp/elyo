@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Check, Star } from 'lucide-react';
-import Link from 'next/link';
 
 interface FormuleCardProps {
   title: string;
@@ -27,6 +26,23 @@ export default function FormuleCard({
   delay = 0,
   ctaText = 'Choisir cette formule',
 }: FormuleCardProps) {
+  const handleChooseFormule = () => {
+    // Store selected formula
+    const formuleMapping: { [key: string]: string } = {
+      'Essentiel': 'Formule Essentielle',
+      'Confort': 'Formule Premium',
+      'Illimité': 'Formule Premium'
+    };
+    const serviceType = formuleMapping[title] || `Formule ${title}`;
+    sessionStorage.setItem('selectedFormule', serviceType);
+
+    // Scroll to contact section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -129,19 +145,18 @@ export default function FormuleCard({
           )}
 
           {/* CTA Button */}
-          <Link href={`#contact?formule=${encodeURIComponent(title)}`}>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className={`w-full py-4 rounded-lg font-medium tracking-wide transition-all duration-200 ${
-                featured
-                  ? 'bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white shadow-lg shadow-amber-500/30'
-                  : 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 hover:border-amber-500/50'
-              }`}
-            >
-              {ctaText}
-            </motion.button>
-          </Link>
+          <motion.button
+            onClick={handleChooseFormule}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className={`w-full py-4 rounded-lg font-medium tracking-wide transition-all duration-200 ${
+              featured
+                ? 'bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white shadow-lg shadow-amber-500/30'
+                : 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 hover:border-amber-500/50'
+            }`}
+          >
+            {ctaText}
+          </motion.button>
         </div>
 
         {/* Decorative corner elements */}

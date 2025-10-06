@@ -58,20 +58,13 @@ export default function ContactForm() {
   }, [submitStatus]);
 
   useEffect(() => {
-    // Read formula from URL parameter
+    // Read formula from sessionStorage
     if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const formule = params.get('formule');
-      if (formule) {
-        const formuleMapping: { [key: string]: string } = {
-          'Essentiel': 'Formule Essentielle',
-          'Confort': 'Formule Premium',
-          'Illimité': 'Formule Premium'
-        };
-        const serviceType = formuleMapping[formule] || formule;
-        if (serviceTypes.includes(serviceType)) {
-          setFormData((prev) => ({ ...prev, serviceType }));
-        }
+      const selectedFormule = sessionStorage.getItem('selectedFormule');
+      if (selectedFormule && serviceTypes.includes(selectedFormule)) {
+        setFormData((prev) => ({ ...prev, serviceType: selectedFormule }));
+        // Clear after reading
+        sessionStorage.removeItem('selectedFormule');
       }
     }
   }, []);
