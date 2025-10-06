@@ -129,7 +129,7 @@ export default function FormuleCard({
           )}
 
           {/* CTA Button */}
-          <Link href="#contact">
+          <Link href={`#contact?formule=${encodeURIComponent(title)}`}>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

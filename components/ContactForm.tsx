@@ -21,6 +21,8 @@ interface FormErrors {
 }
 
 const serviceTypes = [
+  'Formule Essentielle',
+  'Formule Premium',
   'Organisation d\'événements',
   'Services à domicile',
   'Shopping & Personal Shopper',
@@ -54,6 +56,25 @@ export default function ContactForm() {
       statusMessageRef.current.focus();
     }
   }, [submitStatus]);
+
+  useEffect(() => {
+    // Read formula from URL parameter
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const formule = params.get('formule');
+      if (formule) {
+        const formuleMapping: { [key: string]: string } = {
+          'Essentiel': 'Formule Essentielle',
+          'Confort': 'Formule Premium',
+          'Illimité': 'Formule Premium'
+        };
+        const serviceType = formuleMapping[formule] || formule;
+        if (serviceTypes.includes(serviceType)) {
+          setFormData((prev) => ({ ...prev, serviceType }));
+        }
+      }
+    }
+  }, []);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
