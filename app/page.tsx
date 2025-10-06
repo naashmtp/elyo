@@ -3,16 +3,11 @@
 import { motion } from 'framer-motion';
 import {
   CheckCircle2,
-  Package,
-  Shirt,
   Car,
   Calendar,
-  Headphones,
   Building2,
-  Shield,
   Award,
-  Heart,
-  Zap
+  Heart
 } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
@@ -24,17 +19,11 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const prestations = [
-  { icon: Package, title: 'Livraison & courses', description: 'Livraison express de vos achats et courses quotidiennes' },
-  { icon: Shirt, title: 'Pressing & repassage', description: 'Service pressing professionnel et retouches' },
   { icon: Building2, title: 'Services immobiliers', description: 'États des lieux, surveillance et gardiennage de votre domicile' },
   { icon: Car, title: 'Transport & chauffeur', description: 'Service de transport privé avec chauffeur' },
   { icon: Calendar, title: 'Réservations', description: 'Restaurants, spectacles, voyages et événements' },
-  { icon: Headphones, title: 'Assistance 24/7', description: 'Support et assistance disponible à tout moment' },
-  { icon: Shield, title: 'Démarches admin', description: 'Gestion administrative et paperasse' },
   { icon: Award, title: 'Événements privés', description: 'Organisation complète de vos événements' },
   { icon: Heart, title: 'Personal shopper', description: 'Accompagnement shopping personnalisé' },
-  { icon: Zap, title: 'Services express', description: 'Interventions urgentes et prioritaires' },
-  { icon: Package, title: 'Réception colis', description: 'Réception et gestion de vos livraisons' },
   { icon: CheckCircle2, title: 'Sur mesure', description: 'Services personnalisés selon vos besoins' },
 ];
 
