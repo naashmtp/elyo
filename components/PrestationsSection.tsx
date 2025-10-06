@@ -2,18 +2,14 @@
 
 import { motion } from 'framer-motion';
 import {
-  FileText,
-  Key,
   Calendar,
   Users,
   HardHat,
   Lightbulb,
   ShoppingCart,
-  Shirt,
   ShoppingBag,
   Car,
   Eye,
-  Headphones,
 } from 'lucide-react';
 
 interface Prestation {
@@ -22,18 +18,14 @@ interface Prestation {
 }
 
 const prestations: Prestation[] = [
-  { icon: FileText, title: 'Livraison de documents/pli' },
-  { icon: Key, title: 'Remise de clés/courrier' },
   { icon: Calendar, title: 'Réservation' },
   { icon: Users, title: 'Accompagnement' },
   { icon: HardHat, title: 'Suivi de travaux' },
   { icon: Lightbulb, title: 'Conseil personnalisé' },
   { icon: ShoppingCart, title: 'Achat de produits ou matériels' },
-  { icon: Shirt, title: 'Livraison pressing' },
   { icon: ShoppingBag, title: 'Courses' },
   { icon: Car, title: 'Transport' },
   { icon: Eye, title: 'Surveillance' },
-  { icon: Headphones, title: 'Assistance' },
 ];
 
 export default function PrestationsSection() {

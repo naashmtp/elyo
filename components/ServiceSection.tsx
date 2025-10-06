@@ -3,12 +3,9 @@
 import { motion } from 'framer-motion';
 import {
   Calendar,
-  Home,
   Wrench,
   ShoppingBag,
   Plane,
-  FileText,
-  Headphones,
   Gift,
 } from 'lucide-react';
 import ServiceCard from './ServiceCard';
@@ -19,12 +16,6 @@ const services = [
     title: 'Organisation d\'événements',
     description:
       'De l\'anniversaire intimiste au mariage somptueux, nous créons des moments inoubliables sur mesure.',
-  },
-  {
-    icon: Home,
-    title: 'Services à domicile',
-    description:
-      'Ménage, jardinage, petits travaux... Nous gérons votre quotidien pour vous offrir plus de temps.',
   },
   {
     icon: Wrench,
@@ -43,18 +34,6 @@ const services = [
     title: 'Voyages & Réservations',
     description:
       'Planification complète de vos voyages, réservations de restaurants et expériences exclusives.',
-  },
-  {
-    icon: FileText,
-    title: 'Démarches administratives',
-    description:
-      'Gestion de vos documents, rendez-vous administratifs et suivi de vos dossiers importants.',
-  },
-  {
-    icon: Headphones,
-    title: 'Assistance personnelle 24/7',
-    description:
-      'Un assistant dédié disponible 7j/7 24h/24 pour tous vos besoins et imprévus.',
   },
   {
     icon: Gift,

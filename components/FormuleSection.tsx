@@ -26,7 +26,7 @@ const formules = [
     features: [
       'Accès à 5 services par mois',
       'Réponse sous 4h',
-      'Assistant dédié 7j/7',
+      'Assistant dédié',
       '1 service de réservation offert par mois',
       'Au choix dans toute la gamme',
       'Priorité sur les réservations',
@@ -41,7 +41,7 @@ const formules = [
     period: '',
     features: [
       'Conciergerie illimitée',
-      'Réponse immédiate 24/7',
+      'Réponse immédiate',
       'Équipe dédiée',
       'Prestations illimitées',
       'Accès prioritaire tous événements',
