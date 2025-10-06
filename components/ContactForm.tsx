@@ -58,15 +58,27 @@ export default function ContactForm() {
   }, [submitStatus]);
 
   useEffect(() => {
-    // Read formula from sessionStorage
+    // Read formula from sessionStorage on mount
     if (typeof window !== 'undefined') {
       const selectedFormule = sessionStorage.getItem('selectedFormule');
       if (selectedFormule && serviceTypes.includes(selectedFormule)) {
         setFormData((prev) => ({ ...prev, serviceType: selectedFormule }));
-        // Clear after reading
         sessionStorage.removeItem('selectedFormule');
       }
     }
+
+    // Listen for formule selection events
+    const handleFormuleSelected = (event: CustomEvent) => {
+      const { serviceType } = event.detail;
+      if (serviceTypes.includes(serviceType)) {
+        setFormData((prev) => ({ ...prev, serviceType }));
+      }
+    };
+
+    window.addEventListener('formuleSelected', handleFormuleSelected as EventListener);
+    return () => {
+      window.removeEventListener('formuleSelected', handleFormuleSelected as EventListener);
+    };
   }, []);
 
   const validateForm = (): boolean => {

@@ -36,6 +36,9 @@ export default function FormuleCard({
     const serviceType = formuleMapping[title] || `Formule ${title}`;
     sessionStorage.setItem('selectedFormule', serviceType);
 
+    // Dispatch custom event to notify ContactForm
+    window.dispatchEvent(new CustomEvent('formuleSelected', { detail: { serviceType } }));
+
     // Scroll to contact section
     const contactSection = document.getElementById('contact');
     if (contactSection) {
